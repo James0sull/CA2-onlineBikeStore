@@ -1,5 +1,4 @@
 from django.db import models
-import datetime
 import uuid
 from django.urls import reverse
 
@@ -57,18 +56,15 @@ class Sale(models.Model):
     name = models.CharField(max_length=250, unique=True)
     description = models.TextField(blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    start_date = models.DateTimeField(default=datetime.now)
-    end_date = models.DateTimeField()
     discount_percentage = models.DecimalField(max_digits=5, decimal_places=0)
 
     class Meta:
-        ordering = ('start_date',)
+        ordering = ('name',)
         verbose_name = 'sale'
         verbose_name_plural = 'sales'
 
-    def sale_on(self):
-        now = datetime.now()
-        return self.start_date <= now <= self.end_date
+    def get_absolute_url(self):
+        return reverse('sale-detail', args=[str(self.id)])
 
     def __str__(self):
         return self.name
