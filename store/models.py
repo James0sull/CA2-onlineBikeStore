@@ -2,27 +2,27 @@ from django.db import models
 import uuid
 from django.urls import reverse
 
-class Category(models.Model):
+class Brand(models.Model):
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
         editable=False)
     name = models.CharField(max_length=250, unique=True)
     description = models.TextField(blank = True)
-    image = models.ImageField(upload_to = 'category', blank=True)
+    image = models.ImageField(upload_to = 'brand', blank=True)
 
     class Meta:
         ordering = ('name',)
-        verbose_name = 'category'
-        verbose_name_plural = 'categories'
+        verbose_name = 'brand'
+        verbose_name_plural = 'brands'
     
     def get_absolute_url(self):
-        return reverse('store:products_by_category', args=[self.id])
+        return reverse('store:bikes_by_brand', args=[self.id])
     
     def __str__(self):
         return self.name
     
-class Product(models.Model):
+class Bike(models.Model):
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
@@ -31,19 +31,17 @@ class Product(models.Model):
     description = models.TextField(blank = True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    image = models.ImageField(upload_to = 'product', blank=True)
+    image = models.ImageField(upload_to =  'bike', blank=True)
     stock = models.IntegerField()
     available = models.BooleanField(default=True)
-    created = models.DateTimeField(auto_now_add=True, blank = True, null= True)
-    updated = models.DateTimeField(auto_now=True, blank = True, null= True)
 
     class Meta:
         ordering = ('name',)
-        verbose_name = 'product'
-        verbose_name_plural = 'products'
+        verbose_name =  'bike'
+        verbose_name_plural =  'bikes'
 
     def get_absolute_url(self):
-        return reverse('store:product_detail', args=[self.category.id, self.id])
+        return reverse('store bike_detail', args=[self.category.id, self.id])
 
     def __str__(self):
         return self.name
@@ -55,8 +53,12 @@ class Sale(models.Model):
         editable=False)
     name = models.CharField(max_length=250, unique=True)
     description = models.TextField(blank=True)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    discount_percentage = models.DecimalField(max_digits=5, decimal_places=0)
+    product = models.ForeignKey (bike, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to =  'bike', blank=True)
+    stock = models.IntegerField()
+    available = models.BooleanField(default=True)
+    original_price = models.DecimalField(max_digits=10, decimal_places=2)
+    sale_price = models.DecimalField(max_digits=10, decimal_places=2)
 
     class Meta:
         ordering = ('name',)
@@ -64,7 +66,7 @@ class Sale(models.Model):
         verbose_name_plural = 'sales'
 
     def get_absolute_url(self):
-        return reverse('sale-detail', args=[str(self.id)])
+        return reverse('sale_detail', args=[str(self.id)])
 
     def __str__(self):
         return self.name
