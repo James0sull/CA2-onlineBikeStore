@@ -14,7 +14,7 @@ class BikeAdmin(admin.ModelAdmin):
 admin.site.register(Bike, BikeAdmin)
 
 class SaleAdmin(admin.ModelAdmin):
-    list_display = ['name', 'description', 'price', 'discount_price', 'available']
-    list_editable = ['availabe', 'discount_price']
+    list_display = ['name', 'description', 'original_price', 'sale_price', 'available']
+    list_editable = ['available', 'sale_price']
     list_per_page = 10
 admin.site.register(Sale, SaleAdmin)

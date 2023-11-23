@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Band, Bike, Sale
+from .models import Brand, Bike, Sale
 
 def bike_list(request, brand_id=None):
     brand = None
