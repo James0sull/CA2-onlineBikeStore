@@ -25,11 +25,12 @@
                     <h1>{{bike.name}}</h1>
                     <p>€{{bike.price}}</p>
                     <p>Bike Description</p>
+                    <p>{{bike.id}}</p>
                     <p class="text-justify">{{bike.description}}</p>
                     {% if bike.stock == 0%}
                         <p class="text-justify"><b>Out of Stock</b></p>
                     {% else %}
-                        <a class="btn btn-secondary" href="{% url 'cart:add_cart' bike.id %}">Add to Basket</a>
+                        <a class="btn btn-secondary" href="#">Add to Basket</a>
                     {% endif %}
                 </div>
             </div>

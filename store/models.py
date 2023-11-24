@@ -8,7 +8,6 @@ class Brand(models.Model):
         default=uuid.uuid4,
         editable=False)
     name = models.CharField(max_length=250, unique=True)
-    description = models.TextField(blank = True)
     image = models.ImageField(upload_to = 'brand', blank=True)
 
     class Meta:
