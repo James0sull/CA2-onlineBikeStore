@@ -40,7 +40,7 @@ class Bike(models.Model):
         verbose_name_plural =  'bikes'
 
     def get_absolute_url(self):
-        return reverse('store bike_detail', args=[self.category.id, self.id])
+        return reverse('store:bike_detail', args=[self.brand.id, self.id])
 
     def __str__(self):
         return self.name
