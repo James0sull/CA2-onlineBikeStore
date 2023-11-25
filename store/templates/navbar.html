@@ -5,7 +5,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- Shop dropdown on the left -->
+            <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -13,21 +14,27 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{% url 'store:all_bikes' %}">All Bikes</a></li>
-                        {% for bicycle in links %}
-                        <li><a class="dropdown-item" href="{{bike.get_absolute_url}}">{{bike.name}}</a></li>
-                        {% endfor %}
+                        <li><a class="dropdown-item" href="#">All Brands</a></li>
+                        <li><a class="dropdown-item" href="#">Sale</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Your Cart</a>
-                </li>
-                {% if item_count > 0 %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'basket:basket_detail' %}"><i
-                            class="fas fa-shopping-cart">({{item_count}})</i></a>
-                </li>
-                {% endif %}
             </ul>
+
+            <!-- Brand links in the middle -->
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Trex</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Look</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Scott</a>
+                </li>
+                <!-- Add more brand links as needed -->
+            </ul>
+
+            <!-- Search box on the right -->
             <form class="d-flex" action="{% url 'searchApp:searchResult' %}" method="get">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
