@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'store',
     'searchApp',
     'basket',
+
+    'crispy_forms',
+    'crispy_bootstrap5',
     
 ]
 
@@ -137,3 +140,8 @@ MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+LOGIN_REDIRECT_URL = 'store:all_bikes'
+LOGOUT_REDIRECT_URL = 'store:all_bikes'
