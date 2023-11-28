@@ -32,6 +32,7 @@ class Bike(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to =  'bike', blank=True)
     stock = models.IntegerField()
+    available = models.BooleanField(default=True)
 
 
     class Meta:
@@ -57,6 +58,7 @@ class Sale(models.Model):
     stock = models.IntegerField()
     original_price = models.DecimalField(max_digits=10, decimal_places=2)
     sale_price = models.DecimalField(max_digits=10, decimal_places=2)
+    available = models.BooleanField(default=True)
 
     class Meta:
         ordering = ('name',)
