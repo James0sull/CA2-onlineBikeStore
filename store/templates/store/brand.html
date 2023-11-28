@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% block metadescription %}
+{% if brand %}
+{{ brand.description|truncatewords:155 }}
+{% else %}
+Welcome to Monty_Cycles store, we stock all main brands of bikes.
+{% endif %}
+{% endblock %}
+{% block title %}
+{% if brand %}
+{{ brand.name }} - Monty_Cycles Store
+{% else %}
+Our Bike Brands - Monty_Cycles Store
+{% endif %}
+{% endblock %}
+{% block content %}
+{% if category %}
+<div class="row">
+    <div class="mx-auto">
+        <p><a href="{% url 'store:all_brands' %}">Our Brands</a> | <a href="{{bike.brand.get_url }}">{{bike.brand}}</a>
+            | {{brand.name}} </p>
+    </div>
+</div>
+{% endif %}
+<div class="container">
+    {% if brand %}
+    <h1 class="text-center">{{brand.name}}</h1>
+    {% else %}
+    <h1 class="text-center">Our Brands</h1>
+    <p class="test-justify">Discover the ideal bike for your lifestyle at our online store, where style and
+        functionality seamlessly converge. Our carefully curated selection of bike brands goes beyond the ordinary,
+        instantly elevating your riding experience. Transform your journey with bikes that prioritize comfort,
+        performance, and a sleek aesthetic. Each bike is a statement of personalized style, ensuring you ride with
+        confidence and flair. Explore our collection today and find the perfect bike to enhance your adventures.</p>
+    {% endif %}
+    <div class="row mx-auto">
+        {% for brand in brands %}
+            <div class="col-2">
+                <a class="img" href="{{ brand.get_absolute_url }}">
+                    <img class="card-img-top" src="{{ brand.image.url }}" alt="{{ brand.name }}">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="mx-auto">
+        {% if brand.paginator.num_pages > 1 %}
+        <hr>
+        <div class="text-center">
+            {% for pg in brand.paginator.page_range %}
+            <a href="?page={{pg}}" class="btn btn-light btn-sm {% if brand.number == pg %}active{% endif%}">{{pg}}</a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

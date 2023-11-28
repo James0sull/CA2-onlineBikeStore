@@ -32,7 +32,7 @@ class Bike(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to =  'bike', blank=True)
     stock = models.IntegerField()
-    available = models.BooleanField(default=True)
+
 
     class Meta:
         ordering = ('name',)
@@ -55,7 +55,6 @@ class Sale(models.Model):
     product = models.ForeignKey (Bike, on_delete=models.CASCADE)
     image = models.ImageField(upload_to =  'sale', blank=True)
     stock = models.IntegerField()
-    available = models.BooleanField(default=True)
     original_price = models.DecimalField(max_digits=10, decimal_places=2)
     sale_price = models.DecimalField(max_digits=10, decimal_places=2)
 
