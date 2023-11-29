@@ -8,7 +8,7 @@ class Brand(models.Model):
         default=uuid.uuid4,
         editable=False)
     name = models.CharField(max_length=250, unique=True)
-    image = models.ImageField(upload_to = 'brand', blank=True)
+    image = models.ImageField(upload_to = 'brands', blank=True)
 
     class Meta:
         ordering = ('name',)
@@ -53,7 +53,7 @@ class Sale(models.Model):
         editable=False)
     name = models.CharField(max_length=250, unique=True)
     description = models.TextField(blank=True)
-    product = models.ForeignKey (Bike, on_delete=models.CASCADE)
+    brand = models.ForeignKey (Bike, on_delete=models.CASCADE)
     image = models.ImageField(upload_to =  'sale', blank=True)
     stock = models.IntegerField()
     original_price = models.DecimalField(max_digits=10, decimal_places=2)

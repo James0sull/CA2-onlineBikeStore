@@ -9,7 +9,7 @@
 {% block content %}
 <div>
     <div class = "mx-auto">
-        <p><a href="{% url 'store:all_bikes' %}">Home</a> | <a href="{{bike.brand.get_url }}">{{bike.brand}}</a> |
+        <p><a href="{% url 'store:all_brands' %}">Home</a> | <a href="{{bike.brand.get_url }}">{{bike.brand}}</a> |
             {{bike.name}}</p>
     </div>
     <div class = "container">

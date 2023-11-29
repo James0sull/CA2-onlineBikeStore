@@ -15,7 +15,7 @@ Our Bike Brands - Monty_Cycles Store
 {% endif %}
 {% endblock %}
 {% block content %}
-{% if category %}
+{% if brand %}
 <div class="row">
     <div class="mx-auto">
         <p><a href="{% url 'store:all_brands' %}">Our Brands</a> | <a href="{{bike.brand.get_url }}">{{bike.brand}}</a>
@@ -36,22 +36,26 @@ Our Bike Brands - Monty_Cycles Store
     {% endif %}
     <div class="row mx-auto">
         {% for brand in brands %}
-            <div class="col-2">
-                <a class="img" href="{{ brand.get_absolute_url }}">
-                    <img class="card-img-top" src="{{ brand.image.url }}" alt="{{ brand.name }}">
-                </a>
-            </div>
+            <div class="col-9 col-lg-4 col-sm-12 col-md-4">
+                <div class="text-center" style="min-width:18rem;">
+                    <a class="img" href="{{ brand.get_absolute_url }}">
+                        <img class="card-img-top" src="{{ brand.image.url }}" alt="{{ brand.name }}">
+                    </a>
+                    <div>
+                        <h4>{{brand.name}}</h4>
+                    </div>
         {% endfor %}
-    </div>
-    <div class="mx-auto">
-        {% if brand.paginator.num_pages > 1 %}
-        <hr>
-        <div class="text-center">
-            {% for pg in brand.paginator.page_range %}
-            <a href="?page={{pg}}" class="btn btn-light btn-sm {% if brand.number == pg %}active{% endif%}">{{pg}}</a>
-            {% endfor %}
+            </div>
+            <div class="mx-auto">
+                {% if brand.paginator.num_pages > 1 %}
+                <hr>
+                <div class="text-center">
+                    {% for pg in brands.paginator.page_range %}
+                    <a href="?page={{pg}}"
+                        class="btn btn-light btn-sm {% if brand.number == pg %}active{% endif%}">{{pg}}</a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
         </div>
-        {% endif %}
-    </div>
-</div>
 {% endblock %}
