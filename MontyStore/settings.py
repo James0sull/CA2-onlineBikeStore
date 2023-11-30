@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'crispy_forms',
     'crispy_bootstrap5',
+    'stripe', 
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 LOGIN_REDIRECT_URL = 'store:all_bikes'
 LOGOUT_REDIRECT_URL = 'store:all_bikes'
+
+STRIPE_SECRET_KEY = 'sk_test_51OCJVPIYVzOWiCs8rxRzY4yfUmMkP52BiqvIKYc98b3laVh9Tl7LeQZs2P4hvjz9RmyNC0NdZCy3RkTYTY8ux5X900zlrulcHg'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51OCJVPIYVzOWiCs81rmKFyHQX2HhKLCrLIRXdJkiegbfzGGhfbgytijsyjQzUXdRfKi9sP1EL7jByJj22aGictXm00YBXzmcJX'

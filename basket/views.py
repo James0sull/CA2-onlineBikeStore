@@ -2,6 +2,8 @@ from django.shortcuts import redirect, render, get_object_or_404
 from store.models import Bike
 from .models import Basket, BasketItem
 from django.core.exceptions import ObjectDoesNotExist
+from django.conf import settings 
+import stripe 
 
 def _basket_id(request):
     basket = request.session.session_key
@@ -10,8 +12,7 @@ def _basket_id(request):
     return basket
 
 def add_basket(request, bike_id):
-    bike = get_object_or_404(id=bike_id)
-
+    bike = Bike.objects.get(id=bike_id)
     try:
         basket = Basket.objects.get(basket_id=_basket_id(request))
     except Basket.DoesNotExist:
@@ -37,7 +38,11 @@ def basket_detail(request, total=0, counter=0, basket_items = None):
             counter += basket_item.quantity
     except ObjectDoesNotExist:
         pass
-    return render(request, 'basket.html', {'basket_items':basket_items, 'total':total, 'counter':counter})
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    stripe_total = int(total * 100)
+    description = 'Online Shop - New Order'
+    data_key = settings.STRIPE_PUBLISHABLE_KEY
+    return render(request, 'basket.html', {'basket_items':basket_items, 'total':total, 'counter':counter, 'data_key':data_key, 'stripe_total':stripe_total, 'description':description})
 
 def basket_remove(request, bike_id):
     basket= Basket.objects.get(basket_id=_basket_id(request))
