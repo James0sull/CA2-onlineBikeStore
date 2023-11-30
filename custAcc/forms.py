@@ -16,7 +16,6 @@ class CustomUserCreationForm(UserCreationForm):
         user = super().save(commit=False)
         user.save()
 
-        # Create associated Address instance
         Address.objects.create(
             customer=user,
             street=self.cleaned_data['street'],

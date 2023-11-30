@@ -1,0 +1,232 @@
+[
+    {
+        "model": "store.brand",
+        "pk": "3dab35a8-2315-4926-9c8a-dc69029e04c7",
+        "fields": {
+            "name": "Look",
+            "image": "brands/Look_logo_kYJJhqE.jpg"
+        }
+    },
+    {
+        "model": "store.brand",
+        "pk": "778aecc8-38ba-40ec-a06b-076b4accdcde",
+        "fields": {
+            "name": "Canyon",
+            "image": "brands/Canyon_logo_0IPdPpg.jpg"
+        }
+    },
+    {
+        "model": "store.brand",
+        "pk": "b95a3ce3-28a2-4dee-9e85-3409fa2323e5",
+        "fields": {
+            "name": "Giant",
+            "image": "brands/Giant_logo_IjzRq8D.jpg"
+        }
+    },
+    {
+        "model": "store.brand",
+        "pk": "be3cbfaf-620a-48c5-9649-121b0faa629d",
+        "fields": {
+            "name": "Trex",
+            "image": "brands/Trex_logo_uCONf2j.jpg"
+        }
+    },
+    {
+        "model": "store.brand",
+        "pk": "cc0753c5-325d-4e4a-9f13-6012a0f70653",
+        "fields": {
+            "name": "Scott",
+            "image": "brands/Scott_logo_wcGx55h.jpg"
+        }
+    },
+    {
+        "model": "store.brand",
+        "pk": "fae4de98-843a-41d7-8477-a32f2b6487aa",
+        "fields": {
+            "name": "Cube",
+            "image": "brands/Cube_logo_I2mNqtO.jpg"
+        }
+    },
+    {
+        "model": "store.bike",
+        "pk": "00bcbfed-300f-4563-8c64-6b2aa955dd86",
+        "fields": {
+            "name": "CONTESSA SPEEDSTER",
+            "description": "It isn't always about competition. Often times, seeking adventure rules supreme, and for those moments, the SCOTT Contessa Speedster Gravel 15 is the perfect tool for the job. Wake up, get dressed, eat breakfast, point your front wheel in one direction and don't look back. Get lost. Find yourself.",
+            "brand": "cc0753c5-325d-4e4a-9f13-6012a0f70653",
+            "price": "999.00",
+            "image": "bike/Cantessa_Speedster.jpg",
+            "stock": 30,
+            "available": true
+        }
+    },
+    {
+        "model": "store.bike",
+        "pk": "0a018102-d349-4189-a399-57a614be25bd",
+        "fields": {
+            "name": "Revolt Advanced",
+            "description": "Rough roads, gravel or dirt. However you choose to roll, this bike does it all. The lightweight, smooth-riding composite frameset and adjustable wheelbase make it more capable than ever.",
+            "brand": "b95a3ce3-28a2-4dee-9e85-3409fa2323e5",
+            "price": "2000.00",
+            "image": "bike/Revolt_Advanced.jpg",
+            "stock": 0,
+            "available": false
+        }
+    },
+    {
+        "model": "store.bike",
+        "pk": "23dccb15-0661-4182-b4b4-847e865026ed",
+        "fields": {
+            "name": "765 Optimum disc",
+            "description": "Designed to painlessly swallow up the miles, the geometry and carbon layup offer a more upright riding position whilst absorbing road vibration.",
+            "brand": "3dab35a8-2315-4926-9c8a-dc69029e04c7",
+            "price": "2800.00",
+            "image": "bike/765_optimum.jpg",
+            "stock": 10,
+            "available": true
+        }
+    },
+    {
+        "model": "store.bike",
+        "pk": "372ca8b9-299a-408c-a8b7-f37f79f1b77c",
+        "fields": {
+            "name": "Top Fuel 8",
+            "description": "Top Fuel 8 fuses the speed of a cross country bike with the capability and forgiveness of a full suspension trail bike. It's quick, nimble, and dishes out serious fun on flow trails and techy descents alike.",
+            "brand": "be3cbfaf-620a-48c5-9649-121b0faa629d",
+            "price": "3500.00",
+            "image": "bike/Top_Fuel_8.jpg",
+            "stock": 5,
+            "available": true
+        }
+    },
+    {
+        "model": "store.bike",
+        "pk": "42d3e65b-786d-4b00-8802-30cf1455cba2",
+        "fields": {
+            "name": "E-765 GOTHAM",
+            "description": "The 250w battery is removable, giving the rider the option to switch between the comfort of an electric bike and the performance of a classic bike. A new bicycle designed for daily commutes in the city, yet perfectly suited to leisurely weekend adventures.",
+            "brand": "3dab35a8-2315-4926-9c8a-dc69029e04c7",
+            "price": "6250.00",
+            "image": "bike/E-765.jpg",
+            "stock": 12,
+            "available": true
+        }
+    },
+    {
+        "model": "store.bike",
+        "pk": "7f550263-7611-4492-a174-0363ba7b0c3c",
+        "fields": {
+            "name": "METRIX 10",
+            "description": "The SCOTT Metrix 10 is your hyper-commuter, ready for some real action on the road. It features a Carbon frame, fully integrated cables routing, a very sporty position on the saddle and high-end components. Out in the hills or on your way to work, the Metrix will keep you fit and healthy.",
+            "brand": "cc0753c5-325d-4e4a-9f13-6012a0f70653",
+            "price": "1650.00",
+            "image": "bike/Metrix_10.jpg",
+            "stock": 10,
+            "available": true
+        }
+    },
+    {
+        "model": "store.bike",
+        "pk": "b0b839b1-1420-4946-8d35-7dce329ab51d",
+        "fields": {
+            "name": "Fathom",
+            "description": "Get your daily dose of singletrack. With a lightweight frame, 130mm suspension fork and 27.5 wheels with high-volume tyres, this hardtail offers loads of traction, speed and fun on the trail.",
+            "brand": "b95a3ce3-28a2-4dee-9e85-3409fa2323e5",
+            "price": "750.00",
+            "image": "bike/Fathom.jpg",
+            "stock": 2,
+            "available": true
+        }
+    },
+    {
+        "model": "store.bike",
+        "pk": "b964a52e-31e1-4114-9321-a743c34c8c3e",
+        "fields": {
+            "name": "NULANE",
+            "description": "Based on our experience building fast, comfortable gravel bikes, the Nulane frame takes our high-quality carbon and transforms it into a light, lively and versatile chassis.",
+            "brand": "fae4de98-843a-41d7-8477-a32f2b6487aa",
+            "price": "1690.00",
+            "image": "bike/Nuroad.jpg",
+            "stock": 19,
+            "available": true
+        }
+    },
+    {
+        "model": "store.bike",
+        "pk": "bd7308d9-a686-4113-98cc-981fb73ef8a8",
+        "fields": {
+            "name": "Talon",
+            "description": "Push the pace on climbs, let loose on the descents. This aluminium hardtail gives you a feel for the trail with balanced, confident handling and a plush suspension fork.",
+            "brand": "b95a3ce3-28a2-4dee-9e85-3409fa2323e5",
+            "price": "620.00",
+            "image": "bike/Talon.jpg",
+            "stock": 23,
+            "available": true
+        }
+    },
+    {
+        "model": "store.bike",
+        "pk": "cfb409a5-e4f8-4b57-bbac-b1d4ee7ed54a",
+        "fields": {
+            "name": "FX Sport 6",
+            "description": "FX Sport 6 is the lightest and fastest fitness bike in the lineup. It has every performance feature of a high-end road bike, with the added benefit of a flat handlebar for additional comfort and control.",
+            "brand": "be3cbfaf-620a-48c5-9649-121b0faa629d",
+            "price": "690.00",
+            "image": "bike/FX_Sport_6.jpg",
+            "stock": 0,
+            "available": false
+        }
+    },
+    {
+        "model": "store.bike",
+        "pk": "dc6d5913-c9c2-4b69-a16d-ec4878557340",
+        "fields": {
+            "name": "SUB CROSS 20",
+            "description": "The SCOTT SUB Cross 20 emphasizes comfort and convenience for touring and transportation.",
+            "brand": "cc0753c5-325d-4e4a-9f13-6012a0f70653",
+            "price": "1800.00",
+            "image": "bike/Sub_Cross_20.jpg",
+            "stock": 5,
+            "available": true
+        }
+    },
+    {
+        "model": "store.bike",
+        "pk": "dea2c50d-8eac-4536-af7f-51bb00b6218d",
+        "fields": {
+            "name": "Nature SLX",
+            "description": "Your bike should be a pleasure to ride, which is why we pulled out the stops to make the Nature's frame as light as possible without sacrificing strength. It's everything you need for carefree days out in the countryside.",
+            "brand": "fae4de98-843a-41d7-8477-a32f2b6487aa",
+            "price": "850.00",
+            "image": "bike/Nature.jpg",
+            "stock": 6,
+            "available": true
+        }
+    },
+    {
+        "model": "store.bike",
+        "pk": "e694962e-a462-42dc-9fb4-e8701925265b",
+        "fields": {
+            "name": "Powerfly FS 4 Gen 3",
+            "description": "Powerfly FS 4 is a full suspension electric mountain bike built to tackle rugged trail adventures. The plush suspension setup soaks up rough terrain, and the powerful Bosch electric drive system boosts your capacity to crush climbs and mile after mile of singletrack.",
+            "brand": "be3cbfaf-620a-48c5-9649-121b0faa629d",
+            "price": "5000.00",
+            "image": "bike/powerfly_fs_4_gen_3.jpg",
+            "stock": 16,
+            "available": true
+        }
+    },
+    {
+        "model": "store.bike",
+        "pk": "fdae04a5-e382-4aa4-baa4-f1e9a7d2743a",
+        "fields": {
+            "name": "AMS ZERO99",
+            "description": "Fast is light, fast is comfortable, and fast is efficient. The AMS ZERO99 frame is crafted from our premium carbon and weighs in at a stunning 1,600g, approximately.",
+            "brand": "fae4de98-843a-41d7-8477-a32f2b6487aa",
+            "price": "2350.00",
+            "image": "bike/AMS_Zero99.jpg",
+            "stock": 3,
+            "available": true
+        }
+    }
+]
