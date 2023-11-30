@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'custAcc',
     'store',
     'basket',
+    'order',
 
     'crispy_forms',
     'crispy_bootstrap5',
