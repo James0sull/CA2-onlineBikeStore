@@ -7,10 +7,6 @@ def brand_list(request, brand_id=None):
     all_brands = Brand.objects.all()
     return render(request, 'store/brand.html', {'all_brands': all_brands})
 
-def all_brands(request):
-    brands = Brand.objects.filter(bike__available=True).distinct()
-    return render(request, 'store/brand.html', {'brands': brands})
-
 
 def brand_detail(request, brand_id):
     brand = get_object_or_404(Brand, id=brand_id)
@@ -36,7 +32,8 @@ def bike_detail(request, brand_id, bike_id):
     bike = get_object_or_404(Bike, brand__id=brand_id, id=bike_id)
     return render(request, 'store/bike.html',{'bike':bike})
 
-def sale_detail(request, sale_id):
-    sale = get_object_or_404(Sale, id=sale_id)
-    related_bike_id = sale.bike_id
-    return render(request, 'store/sale.html', {'sale': sale, 'related_bike_id': related_bike_id})
+def all_sales(request):
+    all_sales = Sale.objects.all()
+    return render(request, 'store/sale.html', {'all_sales': all_sales})
+
+    

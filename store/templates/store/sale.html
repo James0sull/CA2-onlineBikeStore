@@ -1,41 +1,41 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block metadescription %}
-    {{ bike.description|truncatewords:155 }}
+{{ bike.description|truncatewords:155 }}
 {% endblock %}
-
 {% block title %}
-    {{ bike.name }} - Monty_Cycles Store
+{{ bike.name }} Monty_Cycles Store
 {% endblock %}
-
 {% block content %}
-<div>
+<div class = "row my_row">
     <div class="mx-auto">
-        <p><a href="{% url 'store:all_bikes' %}">Home</a> | <a href="{{bike.brand.get_url }}">{{bike.brand}}</a> |
+        <p><a href="{% url 'store:all_brands' %}">Our Brands</a> | <a href="{{bike.brand.get_url }}">{{bike.brand}}</a> |
             {{bike.name}}</p>
     </div>
     <div class="container">
         <br>
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
-                <div style="min-width: 18rem;">
-                    <img src="{{bike.image.url}}" alt="{{bike.name}}">
+        <div class="row mx-auto">
+            {% for bike in bike %}
+                <div class="col-9 col-lg-4 col-sm-12 col-md-4 text-center">
+                    <div style="min-width:18rem;">
+                        <a class="bb_imgs" href="">
+                            <img class="card-img-top" src="{{ bike.image.url }}" alt="{{ bike.name }}">
+                        </a>
+                        <div>
+                            <h4>{{ bike.brand.name }}</h4>
+                            <h1 class="my_title">{{ bike.name }}</h1>
+                            <p>€{{ bike.price }}</p>
+                            <p class="bd_title">Bike Description</p>
+                            <p class="text-justify b_text">{{ bike.description }}</p>
+                            {% if bike.stock == 0 %}
+                                <p class="text-justify"><b>Out of Stock</b></p>
+                            {% else %}
+                                <a class="btn btn-info" href="{% url 'basket:add_basket' bike.id %} ">Add to Basket</a>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6">
-                <div>
-                    <h1>{{bike.name}}</h1>
-                    <p><s>€{{bike.original_price}}</s> <strong>€{{bike.sale_price}}</strong></p>
-                    <p>Bike Description</p>
-                    <p class="text-justify">{{bike.description}}</p>
-                    {% if bike.stock == 0 %}
-                        <p class="text-justify"><b>Out of Stock</b></p>
-                    {% else %}
-                        <a class="btn btn-secondary" href="{% url 'cart:add_cart' bike.id %}">Add to Basket</a>
-                    {% endif %}
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>

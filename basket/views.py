@@ -33,7 +33,7 @@ def add_basket(request, bike_id):
 def basket_detail(request, total=0, counter=0, basket_items = None):
     try:
         basket = Basket.objects.get(basket_id= _basket_id(request))
-        basket_items =  Basket.objects.filter(basket=basket, active=True)
+        basket_items = BasketItem.objects.filter(basket=basket, active=True)
         for basket_item in basket_items:
             total += (basket_item.bike.price * basket_item.quantity)
             counter += basket_item.quantity

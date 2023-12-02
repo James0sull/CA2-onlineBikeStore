@@ -1,13 +1,72 @@
-.custom_table {
+.--bs-info-rgb {
+    background-color: rgba(155, 157, 180, 0.998);
+}
+
+/* Navbar */
+.nav-item {
+    letter-spacing: .2em;
+    font-size: 14px;
+    text-transform: uppercase;    
+}
+
+.nav_color {
+    padding-top: 1em;
+    background-color: rgb(125, 212, 141);
+}
+
+.dropdown-item {
+    font-size: 14px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+/* Footer */
+.my_footer {
+    height: 60px;
+}
+
+.my_footer p {
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.container {
+    margin-top: 20px;
+    color: rgb(10, 10, 1);
+}
+
+.my_title {
+    color: #130c70;
+}
+
+/* Bike Page */
+.bk_title {
+    color: rgb(83, 87, 56);
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.b_text {
+    text-align: justify;
+}
+
+/* Sale Page */
+.org_price {
+    text-decoration: line-through;
+    color: red;
+}
+
+/* Basket Page */
+.my_custom_table {
     min-width: 400px;
     font-size: 14px;
 }
 
-.custom_thead {
+.my_custom_thead {
     font-weight: normal;
     text-transform: uppercase;
     letter-spacing: .2em;
-    background-color: #f8f9fa!important;
+    background-color: #136cc4 !important;
 }
 
 .custom_image {
@@ -21,9 +80,9 @@
 
 .custom_icon {
     text-decoration: none;
-    color: #868e96 !important;
+    color: #e40b0b !important;
 }
 
-.custom_button {
+.my_custom_button {
     margin-top: 5px;
 }

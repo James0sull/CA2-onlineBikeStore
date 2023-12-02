@@ -61,7 +61,7 @@ Basket
                     </td>
                     {% if basket_item.quantity < basket_item.bike.stock %}
                         <td>
-                            <a href="{% url 'basket:add_basket' basket_item.product.id %}" class="custom_a"><i
+                            <a href="{% url 'basket:add_basket' basket_item.bike.id %}" class="custom_a"><i
                                 class="fas fa-plus-circle custom_icon"></i></a>&nbsp;
                             <a href="" class="custom_a"><i class="fas fa-minus-circle custom_icon"></i></a>&nbsp;
                             <a href="" class="custom_icon"><i class="fas fa-trash-alt custom_icon"></i></a>
@@ -106,9 +106,9 @@ Basket
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="{{ data_key }}"
             data-amount="{{ stripe_total }}"
-            data-name="Perfect Cushion Shop"
+            data-name="Monty_Cycles"
             data-description="{{ description }}"
-            data-image="{% static 'images/logo.png' %}"
+            data-image="{% static 'images/BikeStoreLogo.png' %}"
             data-locale="auto"
             data-currency="eur"
             data-shipping-address="true"
@@ -117,7 +117,7 @@ Basket
             </script>
             </form>
         <div class="mx-auto">
-            <a href="{% url 'store:all_products' %}" class="btn btn-secondary btn-block custom_button">Continue
+            <a href="{% url 'store:all_bikes' %}" class="btn btn-secondary btn-block custom_button">Continue
                 Shopping</a>
         </div>
     </div>
