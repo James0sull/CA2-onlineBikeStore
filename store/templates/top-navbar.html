@@ -1,36 +1,38 @@
-<div class="container-fluid">
-    <div class="my_custom_menu">
-        <ul class="list-unstyled d-flex">
+<nav class="navbar navbar-expand-lg navbar-light nav_color">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+        <ul class="list-unstyled d-flex navbar-nav">
             {% if user.is_authenticated %}
             <li class="me-3">
-                <button class="btn btn-light" type="button" data-bs-toggle="dropdown" 
-                        aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-primary btn-outline-warning" type="button" data-bs-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
                     Welcome, {{ user.username }} <i class="fas fa-user-circle"></i>
                 </button>
             </li>
             <li>
-                <a href="{% url 'logout' %}" class="btn btn-outline-light">
+                <a href="{% url 'logout' %}" class="btn btn-primary btn-outline-warning">
                     Sign Out <i class="fas fa-sign-out-alt"></i>
                 </a>
             </li>
             {% else %}
             <li>
-                <a href="{% url 'signup' %}" class="btn btn-outline-light">
+                <a href="{% url 'signup' %}" class="btn btn-primary btn-outline-warning">
                     Sign Up <i class="fas fa-user-plus"></i>
                 </a>
             </li>
             <li class="ms-2">
-                <a href="{% url 'login' %}" class="btn btn-outline-light">
+                <a href="{% url 'login' %}" class="btn btn-primary btn-outline-warning">
                     Login <i class="fas fa-sign-in-alt"></i>
                 </a>
             </li>
             {% endif %}
-            
-            <li class="ms-auto">
-                <a href="{% url 'basket:basket_detail'  %}" class="btn btn-outline-light">
+        </ul>
+        <ul class="list-unstyled d-flex navbar-nav">
+            <li>
+                <a href="{% url 'basket:basket_detail' %}" class="btn btn-primary btn-outline-warning">
                     Basket <i class="fas fa-shopping-basket"></i>
                 </a>
             </li>
         </ul>
     </div>
-</div>
+</nav>
+

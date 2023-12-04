@@ -1,18 +1,25 @@
-.--bs-info-rgb {
-    background-color: rgba(155, 157, 180, 0.998);
+.bg-info-rgb {
+    background-color: rgba(87, 98, 190, 0.998);
 }
 
 /* Navbar */
+/* Custom CSS */
+.navbar-nav.text-light .nav-item .nav-link {
+    color: white !important;
+}
+
 .nav-item {
     letter-spacing: .2em;
     font-size: 14px;
-    text-transform: uppercase;    
+    text-transform: uppercase;
 }
 
 .nav_color {
     padding-top: 1em;
-    background-color: rgb(125, 212, 141);
+    background-color: rgb(127, 119, 119);
+    
 }
+
 
 .dropdown-item {
     font-size: 14px;
@@ -32,11 +39,10 @@
 
 .container {
     margin-top: 20px;
-    color: rgb(10, 10, 1);
 }
 
 .my_title {
-    color: #130c70;
+    color: #140b99;
 }
 
 /* Bike Page */
@@ -53,7 +59,7 @@
 /* Sale Page */
 .org_price {
     text-decoration: line-through;
-    color: red;
+    
 }
 
 /* Basket Page */
